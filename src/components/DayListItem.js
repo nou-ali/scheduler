@@ -17,10 +17,7 @@ export default function DayListItem(props) {
       <h2 className="text--regular">{props.name}</h2>
       <h3 className="text--light">{props.spots ? props.spots : "no"} {props.spots === 1 ? "spot" : "spots"} remaining</h3>
     </li>
-  );
-
-
-
+  )
 
 }
 
