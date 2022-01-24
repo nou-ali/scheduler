@@ -5,20 +5,20 @@ import "components/Appointment/styles.scss";
 
 export default function Form(props) {
   const [student, setStudent] = useState(props.student || "");
-const [interviewer, setInterviewer] = useState(props.interviewer || null);
-const reset = () => {
-  setStudent("");
-  setInterviewer(null)
+  const [interviewer, setInterviewer] = useState(props.interviewer || null);
+  const reset = () => {
+    setStudent("");
+    setInterviewer(null)
   }
 
   const cancel = () => {
     reset();
     props.onCancel()
-    }
+  }
 
-    const save = () => {
-      props.onSave(student, interviewer)
-      }
+  const save = () => {
+    props.onSave(student, interviewer)
+  }
 
 
   return (
@@ -32,19 +32,19 @@ const reset = () => {
             placeholder="Enter Student Name"
             value={student}
             onChange={(event) => setStudent(event.target.value)}
-           
+
           />
         </form>
         <InterviewerList
-        interviewer= {props.interviewer}
-        interviewers={props.interviewers} 
-        value={interviewer} 
-        onChange={setInterviewer} 
+          interviewer={props.interviewer}
+          interviewers={props.interviewers}
+          value={interviewer}
+          onChange={setInterviewer}
         />
       </section>
       <section className="appointment__card-right">
         <section className="appointment__actions">
-          
+
           <Button danger onClick={cancel}>Cancel</Button>
           <Button confirm onClick={save}>Save</Button>
         </section>
@@ -57,4 +57,4 @@ const reset = () => {
 
 
 
-  
+
