@@ -22,12 +22,22 @@ export default function useApplicationData() {
       ...state.appointments,
       [id]: appointment
     };
+    //  a new days array to save back into state 
+
+    const dayArray = state.days.map(day => {
+      if (day.name === state.day && state.appointments[id].interview === null) {
+        // day.spots -= 1;
+        return  { ...day, spots: day.spots - 1 }
+      }
+      return {...day};
+    });
 
     return axios.put(`/api/appointments/${id}`, { interview })
       .then(res => {
         setState({
           ...state,
-          appointments
+          appointments,
+          days: dayArray
         });
       })
   }
@@ -42,11 +52,20 @@ export default function useApplicationData() {
       [id]: appointment
     };
 
+    const dayArray = state.days.map(day => {
+      if (day.name === state.day) {
+        // day.spots += 1;
+        return  { ...day, spots: day.spots + 1 }
+      }
+      return {...day};
+    });
+
     return axios.delete(`/api/appointments/${id}`)
       .then(res => {
         setState({
           ...state,
-          appointments
+          appointments,
+          days: dayArray
         });
       })
   }
@@ -62,6 +81,7 @@ export default function useApplicationData() {
       setState(prev => ({ ...prev, days: all[0].data, appointments: all[1].data, interviewers: all[2].data }));
     });
   }, []);
+
 
   return { state, setDay, bookInterview, cancelInterview }
 
