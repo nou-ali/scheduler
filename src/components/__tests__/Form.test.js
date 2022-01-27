@@ -72,7 +72,7 @@ describe("Form", () => {
     const { getByText, getByPlaceholderText, queryByText } = render(
       <Form
         interviewers={interviewers}
-        student="Lydia Mill-Jones"
+        student="Lydia Miller-Jones"
         onSave={jest.fn()}
         onCancel={onCancel}
       />
