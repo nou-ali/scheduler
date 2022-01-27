@@ -13,7 +13,7 @@ export default function useApplicationData() {
   });
 
   function bookInterview(id, interview) {
-    // console.log(id, interview);
+
     const appointment = {
       ...state.appointments[id],
       interview: { ...interview }
@@ -26,10 +26,10 @@ export default function useApplicationData() {
 
     const dayArray = state.days.map(day => {
       if (day.name === state.day && state.appointments[id].interview === null) {
-        // day.spots -= 1;
-        return  { ...day, spots: day.spots - 1 }
+
+        return { ...day, spots: day.spots - 1 }
       }
-      return {...day};
+      return { ...day };
     });
 
     return axios.put(`/api/appointments/${id}`, { interview })
@@ -54,10 +54,10 @@ export default function useApplicationData() {
 
     const dayArray = state.days.map(day => {
       if (day.name === state.day) {
-        // day.spots += 1;
-        return  { ...day, spots: day.spots + 1 }
+
+        return { ...day, spots: day.spots + 1 }
       }
-      return {...day};
+      return { ...day };
     });
 
     return axios.delete(`/api/appointments/${id}`)
