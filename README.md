@@ -19,8 +19,9 @@ Interview Scheduler is a single-page application (SPA) that allows users to book
 
 ## Screenshots
 
-!["Desktop version"](https://github.com/nou-ali/tweeter/blob/master/docs/Desktop-tweeter.png)
-!["Tablet version"](https://github.com/nou-ali/tweeter/blob/master/docs/Tablet-tweeter.png)
+!["scheduler-img1.png"](https://github.com/nou-ali/scheduler/blob/master/docs/scheduler-img1.png)
+!["scheduler-img2.png"](https://github.com/nou-ali/scheduler/blob/master/docs/scheduler-img2.png)
+!["scheduler-img3.png"](https://github.com/nou-ali/scheduler/blob/master/docs/scheduler-img3.png)
 
 ## Setup
 
