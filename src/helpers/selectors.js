@@ -1,10 +1,10 @@
-function getAppointmentsForDay(state, day) {
+export function getAppointmentsForDay(state, day) {
   const filteredDay = state.days.find((currentDay) => currentDay.name === day);
   const filteredAppointment = filteredDay ? filteredDay.appointments.map((id) => state.appointments[id]) : [];
   return filteredAppointment;
 }
 
-function getInterview(state, interview) {
+export function getInterview(state, interview) {
   if (!interview) {
     return null;
   }
@@ -15,13 +15,12 @@ function getInterview(state, interview) {
   }
 }
 
-function getInterviewersForDay(state, day) {
+export function getInterviewersForDay(state, day) {
   const filteredDay = state.days.find((currentDay) => currentDay.name === day);
   const filteredInterviewers = filteredDay ? filteredDay.interviewers.map((id) => state.interviewers[id]) : [];
   return filteredInterviewers;
 }
 
 
-module.exports = {getAppointmentsForDay, getInterview, getInterviewersForDay}
 
 
